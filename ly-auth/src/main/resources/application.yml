@@ -1,0 +1,47 @@
+server:
+  port: 8087
+spring:
+  application:
+    name: auth-service
+  redis:
+    host: 192.168.150.101
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/heima68?allowMultiQueries=true
+    username: root
+    password: 123
+mybatis:
+  type-aliases-package: com.leyou.auth.entity
+  mapper-locations: mappers/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    com.leyou: trace
+mapper:
+  wrap-keyword: "`{0}`"
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+  instance:
+    ip-address: 127.0.0.1
+    prefer-ip-address: true
+ly:
+  jwt:
+    pubKeyPath: C:/lesson/heima68/ssh/id_rsa.pub
+    priKeyPath: C:/lesson/heima68/ssh/id_rsa
+    user:
+      expire: 30 # 过期时间，单位是分钟
+      cookieName: LY_TOKEN
+      domain: leyou.com
+      maxRemainTime: 600000 # 10分钟
+    app:
+      id: 10
+      serviceName: auth-service
+      expire: 1500 # 过期时间，单位是分钟
+      headerName: privilege_token
+  encoder:
+    crypt:
+      secret: ${random.uuid}
+      strength: 10

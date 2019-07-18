@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>hello</title>
+</head>
+<body>
+  <h1>
+    <span th:if="${msg.length() > 10}">
+      <span th:text="${msg.toUpperCase()}"></span>
+      你真长, 而且大！
+    </span>
+    <span th:if="${msg.length() <= 10}">
+      <span th:text="${msg.toLowerCase()}"></span>
+      你真短，而且小！
+    </span>
+    <br>
+    <span th:each="s : ${msg.toCharArray()}">
+      <p th:text="${s}"></p>
+    </span>
+  </h1>
+</body>
+</html>
