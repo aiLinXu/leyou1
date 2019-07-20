@@ -35,7 +35,7 @@ public class CategoryService {
         }
         // 转换
         return BeanHelper.copyWithCollection(list, CategoryDTO.class);
-        
+
     }
 
     public List<CategoryDTO> queryCategoryByIdList(List<Long> idList){
