@@ -10,7 +10,7 @@ import tk.mybatis.mapper.common.special.InsertListMapper;
 /**
  * @author 虎哥
  */
-
+@Repository
 public interface SkuMapper extends BaseMapper<Sku>, InsertListMapper<Sku> {
     @Update("UPDATE tb_sku SET stock = stock - #{num} WHERE id = #{id}")
     int minusStock(@Param("id") Long id, @Param("num") Integer num);
