@@ -4,12 +4,14 @@ import com.leyou.common.mappers.BaseMapper;
 import com.leyou.item.entity.Brand;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * @author 虎哥
  */
+@Repository
 public interface BrandMapper extends BaseMapper<Brand> {
 
     int insertCategoryBrand(@Param("bid") Long id,@Param("ids") List<Long> ids);
