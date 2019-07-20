@@ -1,5 +1,6 @@
 package com.leyou.item.web;
 
+import com.leyou.common.exceptions.LyException;
 import com.leyou.common.vo.PageResult;
 import com.leyou.item.dto.BrandDTO;
 import com.leyou.item.service.BrandService;
