@@ -23,7 +23,7 @@ public class CategoryService {
     private CategoryMapper categoryMapper;
 
     public List<CategoryDTO> queryCategoryByParentId(Long pid) {
-        // 条件.
+        // 条件
         Category category = new Category();
         category.setParentId(pid);
         // 查询
