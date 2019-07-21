@@ -36,11 +36,13 @@ public class BrandService {
             example.createCriteria().orLike("name", "%" + key + "%")
                     .orEqualTo("letter", key.toUpperCase());
         }
+
         // 3.排序
         if (sortBy != null) {
             String orderByClause = sortBy + (desc ? " DESC" : " ASC");
             example.setOrderByClause(orderByClause);
         }
+
 
         // 4.去数据库搜索
         List<Brand> list = brandMapper.selectByExample(example);
